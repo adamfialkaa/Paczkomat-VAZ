@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paczkomat VAZ</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/docx/7.1.0/docx.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<style>
+   body { font-family: Arial, sans-serif; margin: 20px; }
+   table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+   th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+   th { background-color: #f4f4f4; }
+   button { padding: 10px; margin: 5px 0; cursor: pointer; }
+   .filters, .actions { margin-bottom: 20px; }
+</style>
+</head>
+<body>
+<h1>Paczkomat VAZ</h1>
+<div class="filters">
+<label for="filterSupplier">Filtruj po dostawcy:</label>
+<select id="filterSupplier">
+<option value="">Wszyscy</option>
+</select>
+<label for="filterReceiver">Filtruj po odbierającym:</label>
+<select id="filterReceiver">
+<option value="">Wszyscy</option>
+</select>
+</div>
+<div>
+<label for="courier">Kurier:</label>
+<input type="text" id="courier">
+<label for="supplier">Dostawca:</label>
+<input type="text" id="supplier">
+<label for="receiver">Odbierający:</label>
+<input type="text" id="receiver">
+<button id="addPackage">Dodaj Paczkę</button>
+</div>
+<div>
+<label for="search">Szukaj:</label>
+<input type="text" id="search">
+</div>
+<div class="actions">
+<button id="clearData">Wyczyść Dane</button>
+<button id="exportExcel">Eksportuj do Excela</button>
+<button id="exportWord">Eksportuj do Worda</button>
+</div>
+<h2>Paczki na Magazynie</h2>
+<table>
+<thead>
+<tr>
+<th>Kurier</th>
+<th>Dostawca</th>
+<th>Odbierający</th>
+<th>Data Dodania</th>
+<th>Akcje</th>
+</tr>
+</thead>
+<tbody id="packageList"></tbody>
+</table>
+<h2>Historia Odebranych Paczek</h2>
+<table>
+<thead>
+<tr>
+<th>Kurier</th>
+<th>Dostawca</th>
+<th>Odbierający</th>
+<th>Data Dodania</th>
+<th>Data Odbioru</th>
+<th>Kto Odebrał</th>
+</tr>
+</thead>
+<tbody id="historyList"></tbody>
+</table>
+<script src="script.js"></script>
+<h4 align="right">Adam Fiałka</h4>
+</body>
+</html>
