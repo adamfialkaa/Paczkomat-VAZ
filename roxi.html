@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki dla Roxi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            color: #e60000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+ 
+        .container {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+        }
+ 
+        .heart {
+            font-size: 120px;
+            color: #e60000;
+            animation: pulse 1.5s infinite;
+        }
+ 
+        h1 {
+            font-size: 2rem;
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+ 
+        p {
+            font-size: 1.2rem;
+            color: #333;
+            animation: fadeIn 3s ease-in-out;
+            animation-delay: 1s;
+        }
+ 
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+ 
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+ 
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #e60000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeIn 3s ease-in-out;
+            animation-delay: 2s;
+        }
+ 
+        .btn:hover {
+            background-color: #cc0000;
+        }
+ 
+        .result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            color: #333;
+            animation: fadeIn 3s ease-in-out;
+            animation-delay: 3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart">❤️</div>
+        <h1>Roxi Wariatko!</h1>
+        <p>Życzę Ci cudownych Walentynek! <br> "JU AR DE BEST"!</p>
+        <button class="btn" onclick="losujTekst()">Kliknij tutaj!</button>
+        <div class="result" id="result"></div>
+    </div>
+ 
+    <script>
+        function losujTekst() {
+            const teksty = [
+                "Miłej i radosnej Walentynki! 💖",
+                "Masz świetny dzień, ciesz się każdą chwilą! 😊",
+                "Dziękuję, że jesteś moją koleżanką! 🌟",
+                "Pamiętaj, że jesteś wyjątkowa i ceniona! ❤️"
+            ];
+ 
+            const tekstyDlaKolezanki = [
+                "Dzięki za super wspólne chwile! 😄",
+                "Jesteś niesamowitą koleżanką, cieszę się, że Cię znam! 😎",
+                "Niech te Walentynki będą pełne uśmiechu! 😁",
+                "Wszystkiego najlepszego w Walentynki, koleżanko! 🌹"
+            ];
+ 
+            // Losowanie, który zestaw tekstów ma być wyświetlony
+            const isKolezanka = Math.random() > 0.5; // Losowanie z równym prawdopodobieństwem
+ 
+            const losowyTekst = isKolezanka
+                ? tekstyDlaKolezanki[Math.floor(Math.random() * tekstyDlaKolezanki.length)]
+                : teksty[Math.floor(Math.random() * teksty.length)];
+ 
+            document.getElementById("result").innerText = losowyTekst;
+        }
+    </script>
+</body>
+</html>
